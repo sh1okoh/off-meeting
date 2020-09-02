@@ -1,25 +1,47 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+const findUserLists = () => {
+  const userLists = [
+    {
+      id: 1,
+      name: "hogehoge",
+      image: "image2"
+    },
+    {
+      id: 2,
+      name: "fugafuga",
+      image: "image2"
+    }
+  ]
+
+  return userLists;
+}
+
+function UserListComponent() {
+  return (
+    <>
+    {
+      findUserLists().map(c => {
+        return (
+          <ul>
+            <li>{c.image}</li>
+            <li>{c.id}</li>
+            <li>{c.name}</li>
+          </ul>
+        )
+      })
+    }
+    </>
+  )
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <h1>Hello World</h1>
+    <UserListComponent />
+    </>
   );
 }
 
